@@ -35,7 +35,7 @@ async function main(musicUrls: String[]): Promise<void> {
       await page.goto(musicUrl);
       await page.waitFor(5000);
 
-      let iframe = await page.frames().find((frame: any) => frame.name() === 'contentFrame');  // 获取 iframe 节点
+      const iframe = await page.frames().find((frame: any) => frame.name() === 'contentFrame');  // 获取 iframe 节点
 
       const unfoldButton = await iframe.$('#flag_ctrl'); // 获取展开按钮
       await unfoldButton.click();
@@ -69,10 +69,10 @@ async function main(musicUrls: String[]): Promise<void> {
         await nextPage.click();
 
         await page.waitFor(2000);
-        await sleep(5000);
+        await sleep(1000);
       }
 
-      await sleep(5000);
+      await sleep(3000);
     }
   } catch (error) {
     console.log(error);
@@ -83,6 +83,6 @@ async function main(musicUrls: String[]): Promise<void> {
   }
 }
 
-main(['https://music.163.com/#/song?id=478303470']);
+main(['https://music.163.com/#/song?id=529240413']);
 
 export {};

@@ -8,7 +8,7 @@ const chalk = require('chalk');
 const sleep_1 = __importDefault(require("./utils/sleep"));
 async function main() {
     const browser = await puppeteer.launch({
-        timeout: 100000,
+        timeout: 0,
         ignoreHTTPSErrors: true
     });
     console.log(chalk.green('服务正常启动'));

@@ -33,7 +33,7 @@ async function main(musicUrls) {
         for (let musicUrl of musicUrls) { // 访问歌曲页面
             await page.goto(musicUrl);
             await page.waitFor(5000);
-            let iframe = await page.frames().find((frame) => frame.name() === 'contentFrame'); // 获取 iframe 节点
+            const iframe = await page.frames().find((frame) => frame.name() === 'contentFrame'); // 获取 iframe 节点
             const unfoldButton = await iframe.$('#flag_ctrl'); // 获取展开按钮
             await unfoldButton.click();
             const LYRIC_DIV = await iframe.$('#lyric-content'); // 获取歌词
@@ -60,9 +60,9 @@ async function main(musicUrls) {
                 const nextPage = await iframe.$('.znxt'); // 点击下一页
                 await nextPage.click();
                 await page.waitFor(2000);
-                await sleep_1.default(5000);
+                await sleep_1.default(1000);
             }
-            await sleep_1.default(5000);
+            await sleep_1.default(3000);
         }
     }
     catch (error) {
@@ -74,4 +74,4 @@ async function main(musicUrls) {
         process.exit(0);
     }
 }
-main(['https://music.163.com/#/song?id=478303470']);
+main(['https://music.163.com/#/song?id=529240413']);

@@ -9,7 +9,7 @@ interface PdfData {
 
 async function main(): Promise<void> {
   const browser = await puppeteer.launch({
-    timeout: 100000,
+    timeout: 0,
     ignoreHTTPSErrors: true
   });
   console.log(chalk.green('服务正常启动'));

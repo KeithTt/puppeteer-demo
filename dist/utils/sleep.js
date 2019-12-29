@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const chalk = require('chalk');
 function default_1(delay) {
-    console.log(chalk.yellow('必要的wait'));
+    console.log(chalk.yellow('sleep...'));
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             try {

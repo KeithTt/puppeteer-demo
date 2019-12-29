@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 
 export default function (delay: number) {
-  console.log(chalk.yellow('必要的wait'));
+  console.log(chalk.yellow('sleep...'));
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       try {
