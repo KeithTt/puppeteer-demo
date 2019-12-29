@@ -1,0 +1,22 @@
+{
+  "extends": "tslint-config-standard",
+  "globals": {
+    "require": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist/**/*"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "dist/**/*"
+    ]
+  },
+  "rules": {
+    "no-trailing-whitespace": false,
+    "no-consecutive-blank-lines": false
+  }
+}
