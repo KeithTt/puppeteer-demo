@@ -2,7 +2,6 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const sleep = require('./utils/sleep');
 
 interface CommentData {
   score: string
@@ -70,7 +69,7 @@ async function main(): Promise<void> {
       });
 
       const filePath = path.resolve(__dirname, 'target/' + index + '.txt');
-      fs.writeFile(filePath, JSON.stringify(list), {}, function (err: any) {
+      fs.writeFile(filePath, JSON.stringify(list), {},  (err: any) => {
         if (err) {
           console.log(chalk.red('写入文件失败'))
         } else {

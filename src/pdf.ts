@@ -8,6 +8,7 @@ const puppeteer = require('puppeteer');
     path: 'target/news.pdf',
     format: 'A4'
   });
+
   await browser.close();
 })();
 
