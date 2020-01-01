@@ -4,7 +4,6 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const sleep = require('./utils/sleep');
 async function main() {
     const browser = await puppeteer.launch({
         timeout: 100000,
@@ -53,7 +52,7 @@ async function main() {
                 return commentDataList;
             });
             const filePath = path.resolve(__dirname, 'target/' + index + '.txt');
-            fs.writeFile(filePath, JSON.stringify(list), {}, function (err) {
+            fs.writeFile(filePath, JSON.stringify(list), {}, (err) => {
                 if (err) {
                     console.log(chalk.red('写入文件失败'));
                 }

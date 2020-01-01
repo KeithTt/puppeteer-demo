@@ -9,6 +9,6 @@ rize
     .press('Enter')
     .waitForNavigation()
     .assertSee('Node.js')
-    // .saveScreenshot('searching-node.png', {fullPage: true})
-    .saveScreenshot('searching-node.png')
+    // .saveScreenshot('target/searching-node.png')
+    .saveScreenshot('target/searching-node.png', { fullPage: true })
     .end(); // 别忘了调用 `end` 方法来退出浏览器！

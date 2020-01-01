@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
     });
     const page = await browser.newPage();
     await page.goto("https://github.com/login");
-    await page.waitFor(1000); //延迟1秒输入
+    await page.waitFor(1000); // 延迟1秒输入
     await page.type("#login_field", "账号"); // 输入账号
     await page.type("#password", "密码", {
         delay: 100
